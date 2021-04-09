@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 21:27:42 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/08 22:55:53 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/08 23:57:19 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ void		print_da_dani(t_flags *flags, va_list args)
 	else if (flags->type == 'x')
 		print_x(str, flags, args);
 	else if (flags->type == 'X')
-		print_xx(str, flags, args);
-	else if (flags->type == 'n')
-		print_n(str, flags, args); */
+		print_xx(str, flags, args);*/
 }
 
 void		get_specs(const char *str, t_flags *flags, va_list args)
@@ -55,8 +53,6 @@ void		get_specs(const char *str, t_flags *flags, va_list args)
 		flags->type = 'X';
 	else if (str[flags->count] == '%')
 		flags->type = '%';
-	else if (str[flags->count] == 'n')
-		flags->type = 'n';
 	print_da_dani(flags, args);
 	//print_da_dani(str, flags, args);
 }
