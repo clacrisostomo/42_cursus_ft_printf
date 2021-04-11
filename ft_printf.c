@@ -6,25 +6,25 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:23:36 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/08 22:53:00 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/10 23:40:34 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void		reset_type(t_flags *flags)
+void			reset_type(t_flags *flags)
 {
 	flags->type = 0;
 	flags->zero = 0;
 	flags->minus = 0;
-	flags->dot = 0;
 	flags->padding = 0;
 	flags->width = 0;
 	flags->precision = -1;
 	flags->number = 0;
-	flags->precision_val = -1;
 	flags->count = 0;
 	flags->len = 0;
+	flags->dot = 0;
+	flags->negative = 0;
 }
 
 int				ft_printf(const char *input, ...)

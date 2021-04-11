@@ -6,11 +6,11 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:47:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/08 21:36:59 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/10 23:49:54 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
 void		ft_putchar(t_flags *flags, char c)
 {

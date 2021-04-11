@@ -6,11 +6,11 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:11:25 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/08 22:56:18 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/10 23:44:26 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ft_printf.h"
+#include "ft_printf.h"
 
 int		is_number(const char *str, t_flags *flags)
 {
@@ -25,25 +25,33 @@ int		is_number(const char *str, t_flags *flags)
 	return (1);
 }
 
-void	get_is_star(const char *str, t_flags *flags, va_list args)
+void	paula_is_star(t_flags *flags, va_list args, int *star)
 {
-	flags->precision_val = va_arg(args, int);
-	if (str[flags->count - 1] == '.' && flags->dot == 1)
+	*star = va_arg(args, int);
+	if (*star < 0)
 	{
-		if (flags->precision_val >= 0)
-		{
-			flags->precision = flags->precision_val;
-			flags->zero = 0;
-			flags->padding = ' ';
-		}
-	}
-	if (flags->precision_val < 0)
-	{
-		flags->width = (flags->precision_val * (-1));
+		*star = *star * (-1);
 		flags->zero = 0;
 		flags->padding = ' ';
 	}
-	else
-		flags->width = flags->precision_val;
 	flags->count++;
+}
+
+void	print_padd(t_flags *flags, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len)
+	{
+		ft_putchar(flags, flags->padding);
+		i++;
+	}
+}
+
+void	reset_da_cla(t_flags *flags)
+{
+	flags->width = 0;
+	flags->precision = -1;
+	flags->minus = 0;
 }
