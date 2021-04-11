@@ -6,13 +6,13 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 01:06:46 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 01:11:41 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	conver_putnbr(long int c, char *str, long int i)
+static void	convert_putnbr(long int c, char *str, long int i)
 {
 	long unsigned m;
 
@@ -23,7 +23,7 @@ static void	conver_putnbr(long int c, char *str, long int i)
 		m = (m * (-1));
 	}
 	if (m >= 10)
-		conver_putnbr((m / 10), str, (i - 1));
+		convert_putnbr((m / 10), str, (i - 1));
 	str[i] = (m % 10) + '0';
 }
 
@@ -46,7 +46,7 @@ char		*ft_itoa(long int n)
 	if (!str)
 		return (NULL);
 	str[count] = 0;
-	conver_putnbr(n, str, (count - 1));
+	convert_putnbr(n, str, (count - 1));
 	return (str);
 }
 
