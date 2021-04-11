@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:11:25 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 01:16:17 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 17:21:11 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ void	reset_da_cla(t_flags *flags)
 	flags->width = 0;
 	flags->precision = -1;
 	flags->minus = 0;
+	flags->dot = 0;
 }
