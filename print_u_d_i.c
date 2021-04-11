@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 00:41:11 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 01:15:53 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void		precision_da_nat(t_flags *flags, int size)
 	if (flags->dot == 1 && flags->precision > size)
 	{
 		flags->padding = '0';
-		print_padd(flags, flags->precision - size);
+		print_padding(flags, flags->precision - size);
 	}
 }
 
@@ -80,7 +80,7 @@ void			print_doido_da_nat(t_flags *flags, char *number, int size)
 			flags->width = flags->width - flags->precision;
 		else
 			flags->width = flags->width - size;
-		print_padd(flags, flags->width);
+		print_padding(flags, flags->width);
 	}
 	if (flags->negative == 1 && flags->zero == 0)
 		precision_da_nat(flags, size);
@@ -92,7 +92,7 @@ void			print_doido_da_nat(t_flags *flags, char *number, int size)
 			flags->width = flags->width - flags->precision;
 		else
 			flags->width = flags->width - size;
-		print_padd(flags, flags->width);
+		print_padding(flags, flags->width);
 	}
 	reset_da_cla(flags);
 }

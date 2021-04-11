@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 00:44:07 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 01:15:20 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void		print_choi(t_flags *flags, int c)
 	else if (flags->width > 1 && flags->minus == 0)
 	{
 		flags->padding = ' ';
-		print_padd(flags, flags->width - 1);
+		print_padding(flags, flags->width - 1);
 	}
 	ft_putchar(flags, c);
 	if (flags->width > 1 && flags->minus == 1)
-		print_padd(flags, flags->width - 1);
+		print_padding(flags, flags->width - 1);
 }
 
 /*
@@ -56,13 +56,13 @@ void		print_s(t_flags *flags, char *s)
 	{
 		flags->padding = ' ';
 		flags->width = flags->width - size;
-		print_padd(flags, flags->width);
+		print_padding(flags, flags->width);
 	}
 	ft_putstr(flags, s, size);
 	if (flags->width > size && flags->minus == 1)
 	{
 		flags->width = flags->width - size;
-		print_padd(flags, flags->width);
+		print_padding(flags, flags->width);
 	}
 	reset_da_cla(flags);
 }

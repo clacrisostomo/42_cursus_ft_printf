@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 00:27:07 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 00:49:54 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 01:14:51 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void			reset_da_cla(t_flags *flags);
 
 void			print_percent(t_flags *flags);
 void			print_choi(t_flags *flags, int c);
-void			print_padd(t_flags *flags, int len);
+void			print_padding(t_flags *flags, int len);
 void			print_s(t_flags *flags, char *s);
 void			print_doido_da_nat(t_flags *flags, char *number, int size);
 void			print_d_i(t_flags *flags, int num);
@@ -67,12 +67,9 @@ void			print_hex(t_flags *flags, long int num);
 void			ft_putchar(t_flags *flags, char c);
 char			*ft_strdup(const char *s1);
 int				ft_isdigit(int c);
-int				ft_toupper(int c);
-int				ft_tolower(int c);
 void			ft_putstr(t_flags *flags, char *s, size_t size);
 size_t			ft_strlen(const char *s);
 char			*ft_itoa(long int n);
 char			*hextoa(t_flags *flags, long int nb);
-//char			*hexxtoa(long int nb);
 
 #endif
