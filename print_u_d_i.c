@@ -6,18 +6,21 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/10 23:52:21 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 00:41:11 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*
+** Prints unsigned int
+*/
 void			print_du_luigi(t_flags *flags, long int num)
 {
 	int				size;
 	char			*number;
 
-	flags->count++; // CHOI MANDOU A GENTE CONTAR SEMPRE ESSA MERDA
+	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
 	if (num < 0)
 	{
 		num = num * (-1);
@@ -28,12 +31,15 @@ void			print_du_luigi(t_flags *flags, long int num)
 	print_doido_da_nat(flags, number, size);
 }
 
+/*
+** Prints decimal and int
+*/
 void			print_d_i(t_flags *flags, int num)
 {
 	int		size;
 	char	*number;
 
-	flags->count++; // CHOI MANDOU A GENTE CONTAR SEMPRE ESSA MERDA
+	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
 	if (num < 0)
 	{
 		flags->negative = 1;
@@ -51,6 +57,9 @@ void			print_d_i(t_flags *flags, int num)
 	print_doido_da_nat(flags, number, size);
 }
 
+/*
+** Deals with precision for u, d and i
+*/
 static void		precision_da_nat(t_flags *flags, int size)
 {
 	ft_putchar(flags, '-');

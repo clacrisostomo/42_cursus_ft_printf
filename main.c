@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:48:58 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 00:08:48 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 01:01:43 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,8 +193,8 @@ int		main(void)
 	printf("%-60s: |%-*.*x|", "(hex_neg) minimum (20) and precision (6) field left align", 20, 6, hex);
 	printf("\n");
 	ft_printf("%-60s: |%-*.*x|", "FT hex_neg) minimum (20) and precision (6) field left align", 20, 6, hex);
-	printf("\n");*/
-	printf("\n\n");
+	printf("\n\n");*/
+	printf("\n");
 	printf("%-60s: |%X|","(int) format identifier", integer);
 	printf("\n");
 	ft_printf("%-60s: |%X|","FT (int) format identifier", integer);
@@ -246,5 +246,23 @@ int		main(void)
 	printf("%-60s: |%-*.*X|", "(hex_neg) minimum (20) and precision (6) field left align", 20, 6, hex);
 	printf("\n");
 	ft_printf("%-60s: |%-*.*X|", "FT hex_neg) minimum (20) and precision (6) field left align", 20, 6, hex);
+	printf("\n\n");
+
+	int *pointer;
+	int num;
+
+	num = 42;
+	pointer = &num;
+	printf("%-60s: |%p|","format identifier", pointer);
+	printf("\n");
+	ft_printf("%-60s: |%p|","FT format identifier", pointer);
+	printf("\n");
+	printf("%-60s: |%20p|", "with minimum field (20) width", pointer);
+	printf("\n");
+	ft_printf("%-60s: |%20p|", "FT with minimum field (20) width", pointer);
+	printf("\n");
+	printf("%-60s: |%-20p|", "minimum field (20) left align", pointer);
+	printf("\n");
+	ft_printf("%-60s: |%-20p|", "FT minimum field (20) left align", pointer);
 	printf("\n");*/
 }
