@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:11:25 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 17:21:11 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 17:39:18 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ void	print_padding(t_flags *flags, int len)
 
 void	reset_da_cla(t_flags *flags)
 {
+	if (flags->negative == 1)
+	{
+		flags->len--;
+		flags->negative = 0;
+	}
 	flags->width = 0;
 	flags->precision = -1;
 	flags->minus = 0;
