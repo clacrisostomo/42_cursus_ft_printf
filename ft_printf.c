@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:23:36 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 16:49:01 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 17:54:41 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void			reset_type(t_flags *flags)
 	flags->type = 0;
 	flags->zero = 0;
 	flags->minus = 0;
-	flags->padding = 0;
+	flags->padding = ' ';
 	flags->width = 0;
 	flags->precision = -1;
 	flags->number = 0;
