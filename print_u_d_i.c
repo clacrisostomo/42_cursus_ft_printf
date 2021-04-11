@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 01:15:53 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 02:37:30 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void			print_du_luigi(t_flags *flags, long int num)
 	}
 	number = ft_itoa(num);
 	size = (int)ft_strlen(number);
-	print_doido_da_nat(flags, number, size);
+	print_doido_da_cla(flags, number, size);
 }
 
 /*
@@ -58,7 +58,7 @@ void			print_d_i(t_flags *flags, int num)
 }
 
 /*
-** Deals with precision for u, d and i
+** Deals with precision for d and i
 */
 static void		precision_da_nat(t_flags *flags, int size)
 {

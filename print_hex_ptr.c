@@ -6,15 +6,55 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 00:51:37 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 02:37:38 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
+** Deals with precision for u and hexadecimals
+*/
+
+static void		precision_da_cla(t_flags *flags, int size)
+{
+	if (flags->dot == 1 && flags->precision > size)
+	{
+		flags->padding = '0';
+		print_padding(flags, flags->precision - size);
+	}
+}
+
+void			print_doido_da_cla(t_flags *flags, char *number, int size)
+{
+	if (flags->width <= 0)
+		flags->width = size;
+	else if (flags->width > size && flags->minus == 0)
+	{
+		if (flags->precision > size)
+			flags->width = flags->width - flags->precision;
+		else
+			flags->width = flags->width - size;
+		print_padding(flags, flags->width);
+	}
+	precision_da_cla(flags, size);
+	ft_putstr(flags, number, size);
+	if (flags->width > size && flags->minus == 1)
+	{
+		flags->padding = ' ';
+		if (flags->precision > size)
+			flags->width = flags->width - flags->precision;
+		else
+			flags->width = flags->width - size;
+		print_padding(flags, flags->width);
+	}
+	reset_da_cla(flags);
+}
+
+/*
 ** Prints hexadecimals x and X
 */
+
 void			print_hex(t_flags *flags, long int num)
 {
 	int				size;
@@ -28,5 +68,5 @@ void			print_hex(t_flags *flags, long int num)
 	}
 	number = hextoa(flags, num);
 	size = (int)ft_strlen(number);
-	print_doido_da_nat(flags, number, size);
+	print_doido_da_cla(flags, number, size);
 }
