@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:23:36 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/10 23:40:34 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:49:01 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int				ft_printf(const char *input, ...)
 	t_flags		flags;
 	va_list		args;
 
-	va_start(args, *input);
+	va_start(args, input);
 	reset_type(&flags);
 	if (!(str = ft_strdup(input)))
 		return (0);
