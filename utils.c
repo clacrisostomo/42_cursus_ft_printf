@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:47:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/10 23:49:54 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 01:07:17 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ size_t		ft_strlen(const char *s)
 		i++;
 	}
 	return (i);
+}
+
+void		ft_putstr(t_flags *flags, char *s, size_t size)
+{
+	size_t i;
+
+	i = 0;
+	if (!s)
+		return ;
+	while (i < size)
+	{
+		ft_putchar(flags, s[i]);
+		i++;
+	}
+	return ;
 }
 
 char		*ft_strdup(const char *s1)
