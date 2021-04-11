@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 21:27:42 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 03:59:30 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 15:54:36 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		print_da_dani(t_flags *flags, va_list args)
 	else if (flags->type == 'x' || flags->type == 'X')
 		print_hex(flags, (va_arg(args, long int)));
 	else if (flags->type == 'p')
-		print_p(flags, (va_arg(args, long int)));
+		print_p(flags, (va_arg(args, unsigned long long)));
 }
 
 void		get_specs(const char *str, t_flags *flags, va_list args)

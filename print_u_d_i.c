@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 02:37:30 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:27:41 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 /*
 ** Prints unsigned int
 */
+
 void			print_du_luigi(t_flags *flags, long int num)
 {
 	int				size;
 	char			*number;
 
-	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
+	flags->count++;
 	if (num < 0)
 	{
 		num = num * (-1);
@@ -29,17 +30,19 @@ void			print_du_luigi(t_flags *flags, long int num)
 	number = ft_itoa(num);
 	size = (int)ft_strlen(number);
 	print_doido_da_cla(flags, number, size);
+	free(number);
 }
 
 /*
 ** Prints decimal and int
 */
+
 void			print_d_i(t_flags *flags, int num)
 {
 	int		size;
 	char	*number;
 
-	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
+	flags->count++;
 	if (num < 0)
 	{
 		flags->negative = 1;
@@ -53,13 +56,21 @@ void			print_d_i(t_flags *flags, int num)
 		flags->precision = flags->precision + 1;
 	}
 	if (flags->negative == 1 && flags->zero == 1)
+	{
 		ft_putchar(flags, '-');
-	print_doido_da_nat(flags, number, size);
+		print_doido_da_nat(flags, number, size);
+	}
+	else if (flags->negative == 1 && flags->zero == 0)
+		print_doido_da_nat(flags, number, size);
+	else
+		print_doido_da_cla(flags, number, size);
+	free(number);
 }
 
 /*
 ** Deals with precision for d and i
 */
+
 static void		precision_da_nat(t_flags *flags, int size)
 {
 	ft_putchar(flags, '-');
