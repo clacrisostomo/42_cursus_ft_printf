@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 01:11:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 04:10:25 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char		*ft_itoa(long int n)
 /*
 ** Converts input into hexadecimal x and X
 */
+
 char		*hextoa(t_flags *flags, long int nb)
 {
 	int			count;

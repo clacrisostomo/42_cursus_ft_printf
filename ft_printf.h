@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 00:27:07 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 01:58:54 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 03:59:23 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void			print_d_i(t_flags *flags, int num);
 void			print_du_luigi(t_flags *flags, long int num);
 void			print_hex(t_flags *flags, long int num);
 void			print_doido_da_cla(t_flags *flags, char *number, int size);
-
+void			print_p(t_flags *flags, long int pointer);
+void			print_doido_ptr(t_flags *flags, char *ptr, int size);
 /*
 **  Utils functions
 */

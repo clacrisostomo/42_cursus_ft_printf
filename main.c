@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:48:58 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 02:45:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/11 04:11:23 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,7 +154,7 @@ int		main(void)
 	printf("%-60s: |%-*.*i|", "(hex_neg) minimum (20) and precision (1) field left align", 20, 1, hex_neg);
 	printf("\n");
 	ft_printf("%-60s: |%-*.*i|", "FT (hex_neg) minimum (20) and precision (1) field left align", 20, 1, hex_neg);
-	printf("\n\n");*/
+	printf("\n\n");
 	printf("--unsigned integer--\n");
 	printf("%-60s: |%u|","negative input", -42);
 	printf("\n");
@@ -306,8 +306,8 @@ int		main(void)
 	printf("%-60s: |%-*.*X|", "(hex_neg) minimum (20) and precision (6) field left align", 20, 6, hex);
 	printf("\n");
 	ft_printf("%-60s: |%-*.*X|", "FT hex_neg) minimum (20) and precision (6) field left align", 20, 6, hex);
-	printf("\n\n");
-	/*printf("--pointer--\n");
+	printf("\n\n");*/
+	printf("--pointer--\n");
 	int *pointer;
 	int num;
 
@@ -324,5 +324,5 @@ int		main(void)
 	printf("%-60s: |%-20p|", "minimum field (20) left align", pointer);
 	printf("\n");
 	ft_printf("%-60s: |%-20p|", "FT minimum field (20) left align", pointer);
-	printf("\n");*/
+	printf("\n");
 }
