@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/12 23:33:26 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/12 23:44:24 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@
 void			print_du_luigi(t_flags *flags, long int num)
 {
 	int				size;
-    char			*number;
+	char			*number;
 
 	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
-	if (num == 0)
-		num = !num;
 	if (num < 0)
 	{
 		num = num * (-1);
