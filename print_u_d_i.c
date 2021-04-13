@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 16:27:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/12 22:06:05 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ void			print_du_luigi(t_flags *flags, long int num)
 	size = (int)ft_strlen(number);
 	print_doido_da_cla(flags, number, size);
 	free(number);
+}
+
+void			print_conferir_d_i(t_flags *flags, int num)
+{
+	flags->count++;
+	if (flags->dot == 1)
+	{
+		if (flags->precision <= 0)
+			return ;
+		else
+			print_d_i(flags, num);
+	}
+	print_d_i(flags, num);
 }
 
 /*
