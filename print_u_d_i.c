@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/12 22:06:05 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/12 22:14:40 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void			print_conferir_d_i(t_flags *flags, int num)
 	if (flags->dot == 1)
 	{
 		if (flags->precision <= 0)
-			return ;
+			flags->dot = 0;
 		else
 			print_d_i(flags, num);
 	}
