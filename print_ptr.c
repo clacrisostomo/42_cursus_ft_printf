@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 03:37:40 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 01:29:20 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 01:34:43 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ void			print_doido_ptr(t_flags *flags, char *ptr, int size)
 		print_padding(flags, flags->width);
 	}
 	ft_putstr(flags, "0x", 2);
-	if (flags->dot == 1) //tentando arrumar pointer
+	if (flags->dot == 1 && flags->precision > size) //tentando arrumar pointer
+	{
+		flags->width = flags->width - flags->precision;
 		print_padding(flags, flags->width);
+	}
 	ft_putstr(flags, ptr, size - 2);
 	if (flags->width > size && flags->minus == 1)
 	{
