@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 03:37:40 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 16:28:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 01:27:10 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void			print_doido_ptr(t_flags *flags, char *ptr, int size)
 		print_padding(flags, flags->width);
 	}
 	ft_putstr(flags, "0x", 2);
+	if (flags->dot == 1)
+		print_padding(flags, flags->width);
 	ft_putstr(flags, ptr, size - 2);
 	if (flags->width > size && flags->minus == 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:48:58 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 16:29:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 00:50:14 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -325,4 +325,7 @@ int		main(void)
 	printf("\n");
 	ft_printf("%-60s: |%-20p|", "FT minimum field (20) left align", pointer);
 	printf("\n");
+
+	printf("%u\n", 42);
+	ft_printf("%u\n", 42);
 }
