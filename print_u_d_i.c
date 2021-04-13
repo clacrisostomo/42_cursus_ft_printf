@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/12 22:14:40 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/12 23:10:36 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 void			print_du_luigi(t_flags *flags, long int num)
 {
 	int				size;
-	char			*number;
+    char			*number;
 
-	flags->count++;
+	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
+	if (num == 0)
+		num = !num;
 	if (num < 0)
 	{
 		num = num * (-1);
@@ -30,20 +32,20 @@ void			print_du_luigi(t_flags *flags, long int num)
 	number = ft_itoa(num);
 	size = (int)ft_strlen(number);
 	print_doido_da_cla(flags, number, size);
-	free(number);
 }
 
-void			print_conferir_d_i(t_flags *flags, int num)
+void			print_conferir_d_i(t_flags *flags, int size)
 {
-	flags->count++;
-	if (flags->dot == 1)
+	if (flags->width > size && flags->minus == 1)
 	{
-		if (flags->precision <= 0)
-			flags->dot = 0;
+		flags->padding = ' ';
+		if (flags->precision > size)
+			flags->width = flags->width - flags->precision;
 		else
-			print_d_i(flags, num);
+			flags->width = flags->width - size;
+		print_padding(flags, flags->width);
 	}
-	print_d_i(flags, num);
+	reset_da_cla(flags);
 }
 
 /*
