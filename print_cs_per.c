@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 17:07:23 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 18:52:06 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,25 @@
 ** Prints %
 */
 
-void		print_percent(t_flags *flags)
+void			print_percent(t_flags *flags)
 {
-	flags->count++;
+	int size;
+
+	size = 1;
+	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHITif (flags->width <= 0)
+	if (flags->width <= 0)
+		flags->width = size;
+	else if (flags->width > size && flags->minus == 0)
+	{
+		flags->width = flags->width - size;
+		print_padding(flags, flags->width);
+	}
 	ft_putchar(flags, '%');
+	if (flags->width > size && flags->minus == 1)
+	{
+		flags->width = flags->width - size;
+		print_padding(flags, flags->width);
+	}
 }
 
 /*
