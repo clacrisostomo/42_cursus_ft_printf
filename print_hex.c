@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/12 23:13:07 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/12 23:15:23 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void			print_doido_da_cla(t_flags *flags, char *number, int size)
 			flags->width = flags->width - size;
 		print_padding(flags, flags->width);
 	}
-	precision_nat_uhex(flags, size);
+	precision_da_cla(flags, size);
 	if (flags->dot == 1 && flags->precision <= 0 && *number == '0')
 		print_conferir_d_i(flags, size);
 	else
