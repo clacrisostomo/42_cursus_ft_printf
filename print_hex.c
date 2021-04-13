@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/12 23:15:23 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 00:18:30 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void			print_hex(t_flags *flags, long int num)
 	}
 	number = hextoa(flags, num);
 	size = (int)ft_strlen(number);
+	if (num == 0 && flags->dot == 1)
+		size = 0;
 	print_doido_da_cla(flags, number, size);
 	free(number);
 }
