@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 20:45:53 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 20:48:24 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void			print_conferir_d_i(t_flags *flags, int size)
 ** Prints decimal and int
 */
 
-void			print_d_i(t_flags *flags, int num)
+void			print_d_i(t_flags *flags, long int num)
 {
 	int		size;
 	char	*number;
