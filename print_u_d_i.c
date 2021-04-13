@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/12 23:10:36 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/12 23:28:08 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,15 @@ void			print_d_i(t_flags *flags, int num)
 	char	*number;
 
 	flags->count++;
+	size = 0;
 	if (num < 0)
 	{
 		flags->negative = 1;
 		num = num * (-1);
 	}
 	number = ft_itoa(num);
-	size = (int)ft_strlen(number);
+	if (num != 0)
+		size = (int)ft_strlen(number);
 	if (flags->negative == 1)
 	{
 		size = size + 1;
