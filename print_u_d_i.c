@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 23:44:34 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 01:29:51 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,22 @@
 ** Prints unsigned int
 */
 
-void			print_du_luigi(t_flags *flags, long int num)
+void			print_du_luigi(t_flags *flags, long unsigned num)
 {
 	int				size;
 	char			*number;
 
 	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
-	if (num < 0)
+	if (flags->dot == 1)
+	{
+		flags->zero = 0;
+		flags->padding = ' ';
+	}
+	/*if (num < 0)
 	{
 		num = num * (-1);
 		num = UINT_MAX - num + 1;
-	}
+	}*/
 	number = ft_itoa(num);
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)
@@ -60,7 +65,8 @@ void			print_d_i(t_flags *flags, long int num)
 
 	flags->count++;
 	if (flags->dot == 1)
-	{	flags->zero = 0;
+	{
+		flags->zero = 0;
 		flags->padding = ' ';
 	}
 	if (num == INT_MIN)

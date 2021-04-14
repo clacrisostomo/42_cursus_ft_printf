@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 21:27:42 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 15:54:36 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 01:28:28 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		print_da_dani(t_flags *flags, va_list args)
 	else if (flags->type == 'd' || flags->type == 'i')
 		print_d_i(flags, (va_arg(args, int)));
 	else if (flags->type == 'u')
-		print_du_luigi(flags, (va_arg(args, long int)));
+		print_du_luigi(flags, (va_arg(args, long unsigned)));
 	else if (flags->type == 'x' || flags->type == 'X')
 		print_hex(flags, (va_arg(args, long int)));
 	else if (flags->type == 'p')
