@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 00:27:07 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 02:48:23 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:58:57 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int				ft_isdigit(int c);
 void			ft_putstr(t_flags *flags, char *s, size_t size);
 size_t			ft_strlen(const char *s);
 char			*ft_itoa(long int n);
-char			*hextoa(t_flags *flags, long long nb);
+char			*hextoa(t_flags *flags, long int nb);
 char			*ft_utoa(unsigned int n);
 
 #endif
