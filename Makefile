@@ -6,7 +6,7 @@
 #    By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 18:49:16 by csantos-          #+#    #+#              #
-#    Updated: 2021/04/14 19:20:05 by csantos-         ###   ########.fr        #
+#    Updated: 2021/04/14 19:55:45 by csantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,11 @@ $(NAME): $(INCLUDES)
 #	@gcc $(OBJ)
 #	@./a.out
 	ar rc $(NAME) $(OBJ)
+
+git:
+		git add .
+		git commit -m "updating"
+		git push
 
 clean:
 		rm -f $(OBJ) a.out
