@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 01:03:29 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 02:58:02 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 ** Deals with precision for u and hexadecimals
 */
 
-static void		precision_da_cla(t_flags *flags, int size)
+static void		precision_da_cla(t_flags *flags, char *number, int size)
 {
 	if (flags->dot == 1 && flags->precision > size)
 	{
 		flags->padding = '0';
 		print_padding(flags, flags->precision - size);
 	}
+	if (flags->dot == 1 && flags->precision <= 0 && *number == '0')
+		print_conferir_d_i(flags, size);
 }
 
 void			print_doido_da_cla(t_flags *flags, char *number, int size)
@@ -37,21 +39,16 @@ void			print_doido_da_cla(t_flags *flags, char *number, int size)
 			flags->width = flags->width - size;
 		print_padding(flags, flags->width);
 	}
-	precision_da_cla(flags, size);
-	if (flags->dot == 1 && flags->precision <= 0 && *number == '0')
-		print_conferir_d_i(flags, size);
-	else
+	precision_da_cla(flags, number, size);
+	ft_putstr(flags, number, size);
+	if (flags->width > size && flags->minus == 1)
 	{
-		ft_putstr(flags, number, size);
-		if (flags->width > size && flags->minus == 1)
-		{
-			flags->padding = ' ';
-			if (flags->precision > size)
-				flags->width = flags->width - flags->precision;
-			else
-				flags->width = flags->width - size;
-			print_padding(flags, flags->width);
-		}
+		flags->padding = ' ';
+		if (flags->precision > size)
+			flags->width = flags->width - flags->precision;
+		else
+			flags->width = flags->width - size;
+		print_padding(flags, flags->width);
 	}
 	reset_da_cla(flags);
 }

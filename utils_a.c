@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 01:27:15 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 02:55:52 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,25 @@ char		*hextoa(t_flags *flags, long long nb)
 		count--;
 	}
 	return (str);
+}
+
+char		*ft_utoa(unsigned int n)
+{
+	unsigned int	count;
+	unsigned int	num;
+	char			*temp;
+
+	count = 1;
+	num = n;
+	while (n >= 10 && count++)
+		n /= 10;
+	if (!(temp = malloc((count + 1) * sizeof(char))))
+		return (NULL);
+	*(temp + count) = '\0';
+	while (count--)
+	{
+		*(temp + count) = num % 10 + '0';
+		num /= 10;
+	}
+	return (temp);
 }

@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 22:05:21 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 03:11:49 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void			print_percent(t_flags *flags)
 	int size;
 
 	size = 1;
-	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHITif (flags->width <= 0)
+	flags->count++;
 	if (flags->width <= 0)
 		flags->width = size;
 	else if (flags->width > size && flags->minus == 0)
@@ -41,7 +41,7 @@ void			print_percent(t_flags *flags)
 ** Prints chars
 */
 
-void		print_choi(t_flags *flags, int c)
+void			print_choi(t_flags *flags, int c)
 {
 	flags->count++;
 	if (flags->asterisk == 1)
@@ -63,7 +63,7 @@ void		print_choi(t_flags *flags, int c)
 ** Prints strings
 */
 
-void		print_s(t_flags *flags, char *s)
+void			print_s(t_flags *flags, char *s)
 {
 	int size;
 
