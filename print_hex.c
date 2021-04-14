@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 19:19:01 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:30:13 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void			print_doido_da_cla(t_flags *flags, char *number, int size)
 		flags->width = size;
 	else if (flags->width > size && flags->minus == 0)
 	{
-		if (flags->dot == 1 && flags->width > flags->precision)
+		/*if (flags->dot == 1 && flags->width > flags->precision)
 		{
 			flags->padding = ' ';
 			flags->width = flags->width - flags->precision;
-		}
-		else if (flags->precision > size)
+		}*/
+		if (flags->precision > size)
 			flags->width = flags->width - flags->precision;
 		else
 			flags->width = flags->width - size;
