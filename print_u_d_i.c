@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 20:54:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 23:27:15 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void			print_d_i(t_flags *flags, long int num)
 	char	*number;
 
 	flags->count++;
+	if (flags->dot == 1)
+		flags->zero = 0;
 	if (num == INT_MIN)
 	{
 		num = 2147483648;
