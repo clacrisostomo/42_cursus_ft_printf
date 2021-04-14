@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 00:27:07 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 20:49:31 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 21:48:10 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct	s_flags
 	int		len;
 	char	dot;
 	char	negative;
+	char	asterisk;
 }				t_flags;
 
 /*

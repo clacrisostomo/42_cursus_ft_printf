@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 18:52:06 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 21:55:57 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void			print_percent(t_flags *flags)
 void		print_choi(t_flags *flags, int c)
 {
 	flags->count++;
+	if (flags->asterisk == 1)
+		flags->minus = 1;
 	if (flags->width <= 0)
 		flags->width = 1;
 	else if (flags->width > 1 && flags->minus == 0)

@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:11:25 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 21:06:24 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 21:57:26 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	paula_is_star(t_flags *flags, va_list args, int *star)
 	*star = va_arg(args, int);
 	if (*star < 0)
 	{
+		flags->asterisk = 1;
 		if (flags->dot == 0)
 			flags->minus = 1;
 		else
@@ -60,4 +61,5 @@ void	reset_da_cla(t_flags *flags)
 	flags->precision = -1;
 	flags->minus = 0;
 	flags->dot = 0;
+	flags->asterisk = 0;
 }

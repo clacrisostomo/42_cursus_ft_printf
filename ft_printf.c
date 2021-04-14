@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:23:36 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 17:54:41 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 21:48:21 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void			reset_type(t_flags *flags)
 	flags->len = 0;
 	flags->dot = 0;
 	flags->negative = 0;
+	flags->asterisk = 0;
 }
 
 int				ft_printf(const char *input, ...)
