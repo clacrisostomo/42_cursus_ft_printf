@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 02:55:52 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 19:50:23 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char		*ft_itoa(long int n)
 ** Converts input into hexadecimal x and X
 */
 
-char		*hextoa(t_flags *flags, long long nb)
+/*char		*hextoa(t_flags *flags, long long nb)
 {
 	int			count;
 	char		*str;
@@ -80,7 +80,7 @@ char		*hextoa(t_flags *flags, long long nb)
 		count--;
 	}
 	return (str);
-}
+}*/
 
 char		*ft_utoa(unsigned int n)
 {
@@ -99,6 +99,27 @@ char		*ft_utoa(unsigned int n)
 	{
 		*(temp + count) = num % 10 + '0';
 		num /= 10;
+	}
+	return (temp);
+}
+
+char		*hextoa(t_flags *flags, long long nb)
+{
+	int				count;
+	long long		num;
+	char			*temp;
+
+	count = 1;
+	num = nb;
+	while (nb >= 10 && count++)
+		nb /= 16;
+	if (!(temp = malloc((count + 1) * sizeof(char))))
+		return (NULL);
+	*(temp + count) = '\0';
+	while (count--)
+	{
+		*(temp + count) = num % 16 + '0';
+		num /= 16;
 	}
 	return (temp);
 }

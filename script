@@ -1,0 +1,7 @@
+cd ..
+cd ..
+rm -rf ft_printf
+git clone git@github.com:clacrisostomo/42cursus_ft_printf.git ft_printf
+cd ft_printf
+git clone https://github.com/Tripouille/printfTester.git
+cd printfTester
