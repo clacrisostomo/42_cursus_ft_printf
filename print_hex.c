@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 19:37:38 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:24:04 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ void			print_doido_da_cla(t_flags *flags, char *number, int size)
 		flags->width = size;
 	else if (flags->width > size && flags->minus == 0)
 	{
-		/*if (flags->dot == 1 && flags->width > flags->precision)
-		{
-			flags->padding = ' ';
-			flags->width = flags->width - flags->precision;
-		}*/
 		if (flags->precision > size)
 			flags->width = flags->width - flags->precision;
 		else
@@ -62,7 +57,7 @@ void			print_doido_da_cla(t_flags *flags, char *number, int size)
 ** Prints hexadecimals x and X
 */
 
-void			print_hex(t_flags *flags, long int num)
+void			print_hex(t_flags *flags, unsigned long num)
 {
 	int				size;
 	char			*number;

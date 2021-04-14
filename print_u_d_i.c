@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 19:28:14 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:03:23 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ void			print_du_luigi(t_flags *flags, unsigned num)
 		flags->zero = 0;
 		flags->padding = ' ';
 	}
-	/*if (num < 0)
-	{
-		num = num * (-1);
-		num = UINT_MAX - num + 1;
-	}*/
 	number = ft_utoa(num);
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)
