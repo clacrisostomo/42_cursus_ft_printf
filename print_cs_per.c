@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 21:55:57 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/13 22:05:21 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void		print_choi(t_flags *flags, int c)
 	ft_putchar(flags, c);
 	if (flags->width > 1 && flags->minus == 1)
 		print_padding(flags, flags->width - 1);
+	reset_da_cla(flags);
 }
 
 /*
