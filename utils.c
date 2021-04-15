@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:47:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 00:42:08 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:22:12 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void		ft_putchar(t_flags *flags, char c)
 {
 	write(1, &c, 1);
 	flags->len++;
+	if (!c)
+		flags->len--;
 }
 
 size_t		ft_strlen(const char *s)
