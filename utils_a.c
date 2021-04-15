@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 00:08:31 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 00:10:11 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,10 +125,10 @@ char		*hextoa(t_flags *flags, unsigned long long nb)
 	str[count] = '\0';
 	while (temp != 0)
 	{
-		temp = temp % 16;
-		if ((flags->type == 'x' || flags->type == 'p') && temp >= 10)
+		//temp = temp % 16;
+		if ((flags->type == 'x' || flags->type == 'p') && (temp  % 16) >= 10)
 			str[count - 1] = temp + 87;
-		else if (flags->type == 'X' && temp >= 10)
+		else if (flags->type == 'X' && (temp % 16) >= 10)
 			str[count - 1] = temp + 55;
 		else
 			str[count - 1] = temp + 48;
