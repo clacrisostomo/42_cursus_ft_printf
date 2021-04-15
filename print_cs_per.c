@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 20:16:07 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:18:49 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,11 @@ void			print_s(t_flags *flags, char *s)
 	int size;
 
 	if (!s)
+	{
 		s = "(null)";
-	size = (int)ft_strlen(s);
-	if (*s == "")
 		flags->len--;
+	}
+	size = (int)ft_strlen(s);
 	//printf("size = %i\n", size);
 	flags->count++;
 	if (flags->dot == 1 && flags->precision < size)
