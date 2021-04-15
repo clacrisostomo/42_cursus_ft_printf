@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 21:44:10 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 21:46:17 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ char		*hextoa(t_flags *flags, unsigned long nb)
 	str = (char *)malloc(sizeof(char) * (count + 1));
 	if (!str)
 		return (NULL);
-	*(str + count) = '\0';
+	str[count] = '\0';
 	while (count >= 0)
 	{
 		temp = nb % 16;
