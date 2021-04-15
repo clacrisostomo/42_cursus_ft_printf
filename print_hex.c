@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 23:32:55 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 00:38:43 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ void			print_hex(t_flags *flags, unsigned int num)
 		flags->zero = 0;
 		flags->padding = ' ';
 	}
-	if (num < 0)
+	/*if (num < 0)
 	{
 		num = num * (-1);
 		num = UINT_MAX - num + 1;
-	}
+	}*/
 	number = hextoa(flags, (unsigned long long)num);
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)

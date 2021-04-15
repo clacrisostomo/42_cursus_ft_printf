@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:47:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/11 01:07:17 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 00:42:08 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void		ft_putstr(t_flags *flags, char *s, size_t size)
 		ft_putchar(flags, s[i]);
 		i++;
 	}
+	//printf("Aqui\n");
 	return ;
 }
 
