@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 03:37:40 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 03:08:14 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 21:06:35 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void			print_doido_ptr(t_flags *flags, char *ptr, int size)
 ** Prints pointers
 */
 
-void			print_p(t_flags *flags, unsigned long long pointer)
+void			print_p(t_flags *flags, unsigned long pointer)
 {
 	int				size;
 	char			*ptr;

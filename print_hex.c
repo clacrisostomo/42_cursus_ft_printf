@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 20:24:04 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 21:03:47 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void			print_doido_da_cla(t_flags *flags, char *number, int size)
 ** Prints hexadecimals x and X
 */
 
-void			print_hex(t_flags *flags, unsigned long num)
+void			print_hex(t_flags *flags, unsigned int num)
 {
 	int				size;
 	char			*number;
