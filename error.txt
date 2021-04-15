@@ -1,0 +1,28 @@
+category: mix, number: 9
+args:      [" a%c%%c%%s%%p%%d%%i%%u%%x%%X%%p%s", 0, ""]
+printf:    [ a] = 21
+ft_printf: [ a] = 22
+c1r2p2% make mix 10
+Already up to date.
+make[1]: Nothing to be done for `all'.
+[Mandatory]
+category: mix, number: 10
+args:      ["%%%%%%%%%%%%%%%%%s%%%s%%%s", "", "", ""]
+printf:    [%%%%%%%%%%] = 10
+ft_printf: [%%%%%%%% % % ] = 13
+c1r2p2% make mix 25
+Already up to date.
+make[1]: Nothing to be done for `all'.
+[Mandatory]
+category: mix, number: 25
+args:      ["%%*.s%c%%*.s*%ss%%*.s", '2', ""]
+printf:    [%*.s2%*.s*s%*.s] = 15
+ft_printf: [%*.s2%*.s* s%*.s] = 16
+c1r2p2% make mix 29
+Already up to date.
+make[1]: Nothing to be done for `all'.
+[Mandatory]
+category: mix, number: 29
+args:      ["%%%s%c%%c", "", 0]
+printf:    [%] = 4
+ft_printf: [% ] = 5
