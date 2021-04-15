@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 23:32:06 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 23:37:08 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char		*hextoa(t_flags *flags, unsigned long long nb)
 {
 	int	count;
 	char			*str;
-	unsigned long	temp;
+	unsigned long long	temp;
 
 	temp = nb;
 	count = 0;
