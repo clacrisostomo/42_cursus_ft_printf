@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 23:52:39 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/14 23:55:37 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,24 +62,21 @@ char		*hextoa(t_flags *flags, unsigned long long nb)
 
 	temp = nb;
 	count = 0;
-	while (temp != 0)
-	{
-		temp = temp / 16;
+	while ((temp = temp / 16) > 0)
 		count++;
-	}
 	str = (char *)malloc(sizeof(char) * (count + 1));
 	if (!str)
 		return (NULL);
 	str[count] = '\0';
-	while (nb != 0)
+	while (count >= 0)
 	{
-		nb = nb % 16;
-		if ((flags->type == 'x' || flags->type == 'p') && nb >= 10)
-			str[count] = nb + 87;
-		else if (flags->type == 'X' && nb >= 10)
-			str[count] = nb + 55;
+		temp = nb % 16;
+		if ((flags->type == 'x' || flags->type == 'p') && temp >= 10)
+			str[count] = temp + 87;
+		else if (flags->type == 'X' && temp >= 10)
+			str[count] = temp + 55;
 		else
-			str[count] = nb + 48;
+			str[count] = temp + 48;
 		nb = nb / 16;
 		count--;
 	}
