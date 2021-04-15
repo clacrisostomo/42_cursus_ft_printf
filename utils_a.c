@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 23:55:37 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 00:06:36 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char		*ft_itoa(long int n)
 ** Converts input into hexadecimal x and X
 */
 
-char		*hextoa(t_flags *flags, unsigned long long nb)
+/*char		*hextoa(t_flags *flags, unsigned long long nb)
 {
 	int	count;
 	char			*str;
@@ -81,7 +81,7 @@ char		*hextoa(t_flags *flags, unsigned long long nb)
 		count--;
 	}
 	return (str);
-}
+}*/
 
 char		*ft_utoa(unsigned int n)
 {
@@ -102,4 +102,38 @@ char		*ft_utoa(unsigned int n)
 		num /= 10;
 	}
 	return (temp);
+}
+
+char		*hextoa(t_flags *flags, unsigned long long nb)
+{
+	int	count;
+	char			*str;
+	unsigned long long	temp;
+
+	temp = nb;
+	count = 0;
+	if (nb == 0)
+		return (ft_strdup("0"));
+	while (nb != 0)
+	{
+		nb = nb / 16
+		count++;
+	}
+	str = (char *)malloc(sizeof(char) * (count + 1));
+	if (!str)
+		return (NULL);
+	str[count] = '\0';
+	while (temp != 0)
+	{
+		temp = temp % 16;
+		if ((flags->type == 'x' || flags->type == 'p') && temp >= 10)
+			str[count] = temp + 87;
+		else if (flags->type == 'X' && temp >= 10)
+			str[count] = temp + 55;
+		else
+			str[count] = temp + 48;
+		temp = temp / 16;
+		count--;
+	}
+	return (str);
 }
