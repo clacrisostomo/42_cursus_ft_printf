@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 00:27:07 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 23:32:15 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:29:02 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void			get_flags_a(const char *str, t_flags *flags, va_list args);
 void			paula_is_star(t_flags *flags, va_list args, int *star);
 int				is_number(const char *str, t_flags *flags);
 void			reset_da_cla(t_flags *flags);
-
 void			print_percent(t_flags *flags);
 void			print_choi(t_flags *flags, int c);
 void			print_padding(t_flags *flags, int len);

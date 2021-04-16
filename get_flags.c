@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 21:27:42 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 21:51:29 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:30:19 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,9 @@ void		get_flags_a(const char *str, t_flags *flags, va_list args)
 		if (str[flags->count] == '*')
 			paula_is_star(flags, args, &flags->precision);
 		else if (is_number(str, flags) == 1)
-		{
 			flags->precision = flags->number;
-			//flags->zero = 0;
-			//flags->padding = ' ';
-		}
 		else
-		{
 			flags->precision = 0;
-			//flags->zero = 0;
-			//flags->padding = ' ';
-		}
 	}
 	get_specs(str, flags, args);
 }

@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 00:11:29 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 23:02:15 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,35 +54,6 @@ char		*ft_itoa(long int n)
 ** Converts input into hexadecimal x and X
 */
 
-/*char		*hextoa(t_flags *flags, unsigned long long nb)
-{
-	int	count;
-	char			*str;
-	unsigned long	temp;
-
-	temp = nb;
-	count = 0;
-	while ((temp = temp / 16) > 0)
-		count++;
-	str = (char *)malloc(sizeof(char) * (count + 1));
-	if (!str)
-		return (NULL);
-	str[count] = '\0';
-	while (count >= 0)
-	{
-		temp = nb % 16;
-		if ((flags->type == 'x' || flags->type == 'p') && temp >= 10)
-			str[count] = temp + 87;
-		else if (flags->type == 'X' && temp >= 10)
-			str[count] = temp + 55;
-		else
-			str[count] = temp + 48;
-		nb = nb / 16;
-		count--;
-	}
-	return (str);
-}*/
-
 char		*ft_utoa(unsigned int n)
 {
 	unsigned int	count;
@@ -104,10 +75,25 @@ char		*ft_utoa(unsigned int n)
 	return (temp);
 }
 
+static void	convert_hex(t_flags *flags, unsigned long long temp, int count)
+{
+	while (temp != 0)
+	{
+		if ((flags->type == 'x' || flags->type == 'p') && (temp % 16) >= 10)
+			str[count - 1] = (temp % 16) + 87;
+		else if (flags->type == 'X' && (temp % 16) >= 10)
+			str[count - 1] = (temp % 16) + 55;
+		else
+			str[count - 1] = (temp % 16) + 48;
+		temp = temp / 16;
+		count--;
+	}
+}
+
 char		*hextoa(t_flags *flags, unsigned long long nb)
 {
-	int	count;
-	char			*str;
+	int					count;
+	char				*str;
 	unsigned long long	temp;
 
 	temp = nb;
@@ -123,17 +109,6 @@ char		*hextoa(t_flags *flags, unsigned long long nb)
 	if (!str)
 		return (NULL);
 	str[count] = '\0';
-	while (temp != 0)
-	{
-		//temp = temp % 16;
-		if ((flags->type == 'x' || flags->type == 'p') && (temp  % 16) >= 10)
-			str[count - 1] = (temp % 16) + 87;
-		else if (flags->type == 'X' && (temp % 16) >= 10)
-			str[count - 1] = (temp % 16) + 55;
-		else
-			str[count - 1] = (temp % 16) + 48;
-		temp = temp / 16;
-		count--;
-	}
+	convert_hex(flags, count, temp);
 	return (str);
 }

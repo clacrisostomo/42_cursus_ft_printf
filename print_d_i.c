@@ -1,64 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_u_d_i.c                                      :+:      :+:    :+:   */
+/*   print_d_i.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:52:18 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 22:39:07 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:54:55 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
-** Prints unsigned int
-*/
-
-void			print_du_luigi(t_flags *flags, unsigned num)
-{
-	int				size;
-	char			*number;
-
-	flags->count++; // CHOI COMMANDS US TO ALWAYS COUNT THIS SHIT
-	if (flags->dot == 1)
-	{
-		flags->zero = 0;
-		flags->padding = ' ';
-	}
-	number = ft_utoa(num);
-	size = (int)ft_strlen(number);
-	if (num == 0 && flags->dot == 1)
-		size = 0;
-	print_doido_da_cla(flags, number, size);
-	free(number);
-}
-
-void			print_conferir_d_i(t_flags *flags, int size)
-{
-	if (flags->width > size && flags->minus == 1)
-	{
-		flags->padding = ' ';
-		if (flags->precision > size)
-			flags->width = flags->width - flags->precision;
-		else
-			flags->width = flags->width - size;
-		print_padding(flags, flags->width);
-	}
-	reset_da_cla(flags);
-}
-
-/*
 ** Prints decimal and int
 */
 
-void			print_d_i(t_flags *flags, long int num)
+static void		verify_d_i(t_flags *flags, long int num)
 {
-	int		size;
-	char	*number;
-
-	flags->count++;
 	if (flags->dot == 1)
 	{
 		flags->zero = 0;
@@ -74,6 +33,15 @@ void			print_d_i(t_flags *flags, long int num)
 		flags->negative = 1;
 		num = num * (-1);
 	}
+}
+
+void			print_d_i(t_flags *flags, long int num)
+{
+	int		size;
+	char	*number;
+
+	flags->count++;
+	verify_d_i(flags, num);
 	number = ft_itoa(num);
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)

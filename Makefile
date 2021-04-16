@@ -6,7 +6,7 @@
 #    By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 18:49:16 by csantos-          #+#    #+#              #
-#    Updated: 2021/04/15 22:04:45 by csantos-         ###   ########.fr        #
+#    Updated: 2021/04/15 23:03:15 by csantos-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,7 @@ all: $(NAME)
 
 $(NAME): $(INCLUDES)
 	@gcc $(CFLAGS) -c $(SRC)
-#	@gcc $(OBJ)
-#	@./a.out
-	ar rc $(NAME) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
 
 git:
 		git add .

@@ -6,15 +6,31 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 03:37:40 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 21:18:28 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:41:47 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 /*
-** Deals with padding for pointers
+** Deals with padding and precision for pointers
 */
+
+static void		precision_ptr(t_flags *flags, char *ptr, int size)
+{
+	if (flags->dot == 1 && flags->precision > size
+		&& flags->width > flags->precision)
+	{
+		flags->width = flags->width - flags->precision;
+		print_padding(flags, flags->width);
+	}
+	if (flags->dot == 1 && flags->precision > size
+		&& flags->width < flags->precision)
+	{
+		flags->padding = '0';
+		print_padding(flags, flags->precision - size + 2);
+	}
+}
 
 void			print_doido_ptr(t_flags *flags, char *ptr, int size)
 {
@@ -26,16 +42,7 @@ void			print_doido_ptr(t_flags *flags, char *ptr, int size)
 		print_padding(flags, flags->width);
 	}
 	ft_putstr(flags, "0x", 2);
-	if (flags->dot == 1 && flags->precision > size && flags->width > flags->precision)
-	{
-		flags->width = flags->width - flags->precision;
-		print_padding(flags, flags->width);
-	}
-	if (flags->dot == 1 && flags->precision > size && flags->width < flags->precision)
-	{
-		flags->padding = '0';
-		print_padding(flags, flags->precision - size + 2);
-	}
+	precision_ptr(flags, ptr, size);
 	ft_putstr(flags, ptr, size - 2);
 	if (flags->width > size && flags->minus == 1)
 	{

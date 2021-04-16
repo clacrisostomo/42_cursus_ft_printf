@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hex.c                                        :+:      :+:    :+:   */
+/*   print_u_hex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/10 23:51:20 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 00:38:43 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:51:22 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void			print_conferir_d_i(t_flags *flags, int size)
+{
+	if (flags->width > size && flags->minus == 1)
+	{
+		flags->padding = ' ';
+		if (flags->precision > size)
+			flags->width = flags->width - flags->precision;
+		else
+			flags->width = flags->width - size;
+		print_padding(flags, flags->width);
+	}
+	reset_da_cla(flags);
+}
 
 /*
 ** Deals with precision for u and hexadecimals
@@ -68,12 +82,30 @@ void			print_hex(t_flags *flags, unsigned int num)
 		flags->zero = 0;
 		flags->padding = ' ';
 	}
-	/*if (num < 0)
-	{
-		num = num * (-1);
-		num = UINT_MAX - num + 1;
-	}*/
 	number = hextoa(flags, (unsigned long long)num);
+	size = (int)ft_strlen(number);
+	if (num == 0 && flags->dot == 1)
+		size = 0;
+	print_doido_da_cla(flags, number, size);
+	free(number);
+}
+
+/*
+** Prints unsigned int
+*/
+
+void			print_du_luigi(t_flags *flags, unsigned num)
+{
+	int				size;
+	char			*number;
+
+	flags->count++;
+	if (flags->dot == 1)
+	{
+		flags->zero = 0;
+		flags->padding = ' ';
+	}
+	number = ft_utoa(num);
 	size = (int)ft_strlen(number);
 	if (num == 0 && flags->dot == 1)
 		size = 0;

@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 22:04:26 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 22:30:56 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void			print_percent(t_flags *flags)
 	}
 	reset_da_cla(flags);
 }
+
 /*
 ** Prints chars
 */
@@ -70,7 +71,6 @@ void			print_s(t_flags *flags, char *s)
 	if (!s)
 		s = "(null)";
 	size = (int)ft_strlen(s);
-	//printf("size = %i\n", size);
 	flags->count++;
 	if (flags->dot == 1 && flags->precision < size)
 		size = flags->precision;
