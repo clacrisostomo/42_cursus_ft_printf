@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 21:27:42 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 21:18:07 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:26:47 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void		get_flags_a(const char *str, t_flags *flags, va_list args)
 		else if (is_number(str, flags) == 1)
 		{
 			flags->precision = flags->number;
-			flags->zero = 0;
-			flags->padding = ' ';
+			//flags->zero = 0;
+			//flags->padding = ' ';
 		}
 		else
 		{
