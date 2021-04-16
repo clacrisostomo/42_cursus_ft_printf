@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 21:13:04 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:48:21 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ void			print_s(t_flags *flags, char *s)
 		flags->width = size;
 	else if (flags->width > size && flags->minus == 0)
 	{
-		//flags->padding = ' ';
+		if (flags->width > flags->precision)
+			flags->padding = ' ';
 		flags->width = flags->width - size;
 		print_padding(flags, flags->width);
 	}
