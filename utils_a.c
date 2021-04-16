@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:11:12 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 23:07:06 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/16 01:51:18 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,7 @@ char		*ft_itoa(long int n)
 	return (str);
 }
 
-/*
-** Converts input into hexadecimal x and X
-*/
-
-char		*ft_utoa(unsigned int n)
+char		*utoa(unsigned int n)
 {
 	unsigned int	count;
 	unsigned int	num;
@@ -75,7 +71,12 @@ char		*ft_utoa(unsigned int n)
 	return (temp);
 }
 
-static void	convert_hex(t_flags *flags, unsigned long long temp, int count, char *str)
+/*
+** Converts input into hexadecimal x and X
+*/
+
+static char	*hextoa_a(char *str, t_flags *flags, unsigned long long temp,
+					int count)
 {
 	while (temp != 0)
 	{
@@ -88,6 +89,7 @@ static void	convert_hex(t_flags *flags, unsigned long long temp, int count, char
 		temp = temp / 16;
 		count--;
 	}
+	return (str);
 }
 
 char		*hextoa(t_flags *flags, unsigned long long nb)
@@ -109,6 +111,6 @@ char		*hextoa(t_flags *flags, unsigned long long nb)
 	if (!str)
 		return (NULL);
 	str[count] = '\0';
-	convert_hex(flags, count, temp, str);
+	str = hextoa_a(str, flags, temp, count);
 	return (str);
 }

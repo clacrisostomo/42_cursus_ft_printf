@@ -6,17 +6,17 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:23:36 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/13 21:48:21 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/16 00:49:41 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void			reset_type(t_flags *flags)
+void			set_flags(t_flags *flags)
 {
 	flags->type = 0;
 	flags->zero = 0;
-	flags->minus = 0;
+	flags->dash = 0;
 	flags->padding = ' ';
 	flags->width = 0;
 	flags->precision = -1;
@@ -35,7 +35,7 @@ int				ft_printf(const char *input, ...)
 	va_list		args;
 
 	va_start(args, input);
-	reset_type(&flags);
+	set_flags(&flags);
 	if (!(str = ft_strdup(input)))
 		return (0);
 	while (str[flags.count])
