@@ -28,5 +28,5 @@ int main(void)
 	//ft_printf("|%s|\n", "");
 	//ft_printf(" a%c%%c%%s%%p%%d%%i%%u%%x%%X%%p%s", 0, "");
 	//ft_printf("%%%%%%%%%%%%%%%%%s%%%s%%%s", "", "", "");
-	ft_printf("%10c%0036.99%" ,9);
+	//ft_printf("%10c%0036.99%" ,9);
 }
