@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/11 03:37:40 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 22:41:47 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 23:08:09 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Deals with padding and precision for pointers
 */
 
-static void		precision_ptr(t_flags *flags, char *ptr, int size)
+static void		precision_ptr(t_flags *flags, int size)
 {
 	if (flags->dot == 1 && flags->precision > size
 		&& flags->width > flags->precision)
