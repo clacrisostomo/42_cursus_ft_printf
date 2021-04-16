@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/07 21:10:05 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/15 21:11:56 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:13:04 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void			print_percent(t_flags *flags)
 		print_padding(flags, flags->width);
 	}
 	reset_da_cla(flags);
-
+}
 /*
 ** Prints chars
 */
