@@ -6,7 +6,7 @@
 /*   By: csantos- <csantos-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 21:11:25 by csantos-          #+#    #+#             */
-/*   Updated: 2021/04/14 22:45:15 by csantos-         ###   ########.fr       */
+/*   Updated: 2021/04/15 21:56:52 by csantos-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	paula_is_star(t_flags *flags, va_list args, int *star)
 			flags->asterisk = 1;
 			flags->minus = 1;
 			*star = *star * (-1);
+			flags->padding = ' ';
 		}
 		else
 			flags->dot = 0;
