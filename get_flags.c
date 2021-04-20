@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void		print_specs(t_flags *flags, va_list args)
+void	print_specs(t_flags *flags, va_list args)
 {
 	if (flags->type == '%')
 		print_percent(flags);
@@ -30,7 +30,7 @@ void		print_specs(t_flags *flags, va_list args)
 		print_p(flags, (va_arg(args, unsigned long)));
 }
 
-void		get_specs(const char *str, t_flags *flags, va_list args)
+void	get_specs(const char *str, t_flags *flags, va_list args)
 {
 	if (str[flags->count] == 'c')
 		flags->type = 'c';
@@ -53,7 +53,7 @@ void		get_specs(const char *str, t_flags *flags, va_list args)
 	print_specs(flags, args);
 }
 
-void		get_flags_a(const char *str, t_flags *flags, va_list args)
+void	get_flags_a(const char *str, t_flags *flags, va_list args)
 {
 	if (str[flags->count] == '.')
 	{
@@ -69,7 +69,7 @@ void		get_flags_a(const char *str, t_flags *flags, va_list args)
 	get_specs(str, flags, args);
 }
 
-void		get_flags(const char *str, t_flags *flags, va_list args)
+void	get_flags(const char *str, t_flags *flags, va_list args)
 {
 	while (str[flags->count] == '0' || str[flags->count] == '-')
 	{

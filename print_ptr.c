@@ -16,7 +16,7 @@
 ** Deals with padding for pointers
 */
 
-static void		print_pointer_a(t_flags *flags, int size)
+static void	print_pointer_a(t_flags *flags, int size)
 {
 	if (flags->width > size && flags->dash == 1)
 	{
@@ -27,7 +27,7 @@ static void		print_pointer_a(t_flags *flags, int size)
 	reset_flags(flags);
 }
 
-void			print_pointer(t_flags *flags, char *ptr, int size)
+void	print_pointer(t_flags *flags, char *ptr, int size)
 {
 	if (flags->width <= 0)
 		flags->width = size;
@@ -57,7 +57,7 @@ void			print_pointer(t_flags *flags, char *ptr, int size)
 ** Prints pointers
 */
 
-void			print_p(t_flags *flags, unsigned long pointer)
+void	print_p(t_flags *flags, unsigned long pointer)
 {
 	int				size;
 	char			*ptr;

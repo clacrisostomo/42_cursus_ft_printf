@@ -24,7 +24,7 @@
 /*
 **  Struct Part
 */
-typedef struct	s_flags
+typedef struct s_flags
 {
 	char	type;
 	char	zero;
@@ -56,7 +56,7 @@ void			print_percent(t_flags *flags);
 void			print_c(t_flags *flags, int c);
 void			print_s(t_flags *flags, char *s);
 void			print_d_i(t_flags *flags, long int num);
-void			print_u(t_flags *flags, unsigned num);
+void			print_u(t_flags *flags, unsigned int num);
 void			print_hex(t_flags *flags, unsigned int num);
 void			print_p(t_flags *flags, unsigned long pointer);
 void			print_padding(t_flags *flags, int len);

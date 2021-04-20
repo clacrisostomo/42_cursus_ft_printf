@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void			set_flags(t_flags *flags)
+void	set_flags(t_flags *flags)
 {
 	flags->type = 0;
 	flags->zero = 0;
@@ -28,7 +28,7 @@ void			set_flags(t_flags *flags)
 	flags->asterisk = 0;
 }
 
-int				ft_printf(const char *input, ...)
+int	ft_printf(const char *input, ...)
 {
 	const char	*str;
 	t_flags		flags;
@@ -36,7 +36,8 @@ int				ft_printf(const char *input, ...)
 
 	va_start(args, input);
 	set_flags(&flags);
-	if (!(str = ft_strdup(input)))
+	str = ft_strdup(input);
+	if (!str)
 		return (0);
 	while (str[flags.count])
 	{

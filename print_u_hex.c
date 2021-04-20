@@ -16,7 +16,7 @@
 ** Deals with precision for u and hexadecimals
 */
 
-static void		precision_positive(t_flags *flags, char *number, int size)
+static void	precision_positive(t_flags *flags, char *number, int size)
 {
 	if (flags->dot == 1 && flags->precision > size)
 	{
@@ -38,7 +38,7 @@ static void		precision_positive(t_flags *flags, char *number, int size)
 	}
 }
 
-void			print_positive(t_flags *flags, char *number, int size)
+void	print_positive(t_flags *flags, char *number, int size)
 {
 	if (flags->width <= 0)
 		flags->width = size;
@@ -68,7 +68,7 @@ void			print_positive(t_flags *flags, char *number, int size)
 ** Prints hexadecimals x and X
 */
 
-void			print_hex(t_flags *flags, unsigned int num)
+void	print_hex(t_flags *flags, unsigned int num)
 {
 	int				size;
 	char			*number;
@@ -91,7 +91,7 @@ void			print_hex(t_flags *flags, unsigned int num)
 ** Prints unsigned int
 */
 
-void			print_u(t_flags *flags, unsigned num)
+void	print_u(t_flags *flags, unsigned int num)
 {
 	int				size;
 	char			*number;

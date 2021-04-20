@@ -16,9 +16,9 @@
 ** Prints %
 */
 
-void			print_percent(t_flags *flags)
+void	print_percent(t_flags *flags)
 {
-	int size;
+	int	size;
 
 	size = 1;
 	flags->count++;
@@ -42,7 +42,7 @@ void			print_percent(t_flags *flags)
 ** Prints chars
 */
 
-void			print_c(t_flags *flags, int c)
+void	print_c(t_flags *flags, int c)
 {
 	flags->count++;
 	if (flags->asterisk == 1)
@@ -64,9 +64,9 @@ void			print_c(t_flags *flags, int c)
 ** Prints strings
 */
 
-void			print_s(t_flags *flags, char *s)
+void	print_s(t_flags *flags, char *s)
 {
-	int size;
+	int	size;
 
 	if (!s)
 		s = "(null)";

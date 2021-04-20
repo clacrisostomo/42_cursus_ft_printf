@@ -16,7 +16,7 @@
 ** Prints decimal and int
 */
 
-static void		verify_d_i(t_flags *flags, char *number, int size)
+static void	verify_d_i(t_flags *flags, char *number, int size)
 {
 	if (flags->negative == 1)
 	{
@@ -35,7 +35,7 @@ static void		verify_d_i(t_flags *flags, char *number, int size)
 	free(number);
 }
 
-void			print_d_i(t_flags *flags, long int num)
+void	print_d_i(t_flags *flags, long int num)
 {
 	int		size;
 	char	*number;
@@ -67,7 +67,7 @@ void			print_d_i(t_flags *flags, long int num)
 ** Deals with precision for d and i
 */
 
-static void		precision_negative(t_flags *flags, int size)
+static void	precision_negative(t_flags *flags, int size)
 {
 	ft_putchar(flags, '-');
 	if (flags->dot == 1 && flags->precision > size)
@@ -77,7 +77,7 @@ static void		precision_negative(t_flags *flags, int size)
 	}
 }
 
-void			print_negative(t_flags *flags, char *number, int size)
+void	print_negative(t_flags *flags, char *number, int size)
 {
 	if (flags->width <= 0)
 		flags->width = size;

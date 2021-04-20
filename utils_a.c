@@ -14,7 +14,7 @@
 
 static void	convert_putnbr(long int c, char *str, long int i)
 {
-	long unsigned m;
+	long unsigned	m;
 
 	m = c;
 	if (c < 0)
@@ -27,7 +27,7 @@ static void	convert_putnbr(long int c, char *str, long int i)
 	str[i] = (m % 10) + '0';
 }
 
-char		*ft_itoa(long int n)
+char	*ft_itoa(long int n)
 {
 	char		*str;
 	long int	j;
@@ -50,7 +50,7 @@ char		*ft_itoa(long int n)
 	return (str);
 }
 
-char		*utoa(unsigned int n)
+char	*utoa(unsigned int n)
 {
 	unsigned int	count;
 	unsigned int	num;
@@ -60,7 +60,8 @@ char		*utoa(unsigned int n)
 	num = n;
 	while (n >= 10 && count++)
 		n /= 10;
-	if (!(temp = malloc((count + 1) * sizeof(char))))
+	temp = malloc((count + 1) * sizeof(char));
+	if (!temp)
 		return (NULL);
 	*(temp + count) = '\0';
 	while (count--)
@@ -92,7 +93,7 @@ static char	*hextoa_a(char *str, t_flags *flags, unsigned long long temp,
 	return (str);
 }
 
-char		*hextoa(t_flags *flags, unsigned long long nb)
+char	*hextoa(t_flags *flags, unsigned long long nb)
 {
 	int					count;
 	char				*str;

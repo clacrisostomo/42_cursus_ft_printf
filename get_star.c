@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int		is_number(const char *str, t_flags *flags)
+int	is_number(const char *str, t_flags *flags)
 {
 	flags->number = 0;
 	if (!(ft_isdigit((int)str[flags->count])))
